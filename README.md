@@ -7,3 +7,12 @@ This is a masked input plugin for the jQuery javascript library. It allows a use
 * a - Represents an alpha character (A-Z,a-z)
 * 9 - Represents a numeric character (0-9)
 * * - Represents an alphanumeric character (A-Z,a-z,0-9)
+
+Options
+-------
+
+watermark: Enter a default option or show the user what you want entered there
+  $('#release_date').mask("99/99/9999", {watermark: "mm/dd/yyyy" })
+
+disable_esc: If you use keybindings on esc through another plugin then you may want to disable ESC in masked_input, here is how:
+  $('#release_date').mask("99/99/9999", {disable_esc: true })		

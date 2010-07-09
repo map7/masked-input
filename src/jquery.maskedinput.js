@@ -59,7 +59,8 @@
 			settings = $.extend({
 				placeholder: "_",
 				completed: null,
-				watermark:null
+				watermark:null,
+			        disable_esc:false
 			}, settings);
 
 			var defs = $.mask.definitions;
@@ -137,7 +138,7 @@
 					if (k == 8 || k == 46 || (iPhone && k == 127)) {//backspace/delete
 						shiftL(pos.begin + (k == 46 ? 0 : -1));
 						return false;
-					} else if (k == 27) {//escape
+					} else if (k == 27 && settings.disable_esc == false) {//escape
 						input.val(focusText);
 						input.caret(0, checkVal());
 						return false;
